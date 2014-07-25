@@ -1,5 +1,5 @@
 % start: TODO
-% What the function does
+% What the function does: Riemannian exponential with Left (L)-invariant metric
 % clearer function name ? 
 % Inputs description:
 % Outputs description:
