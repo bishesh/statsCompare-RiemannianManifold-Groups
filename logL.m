@@ -1,6 +1,6 @@
 % start: TODO
-% What the function does
-% clearer function name ? 
+% What the function does : Group logarithm 
+% clearer function name ? yes "logG"
 % Inputs description:
 % Outputs description:
 % end:  TODO
