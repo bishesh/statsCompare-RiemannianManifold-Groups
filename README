@@ -4,4 +4,10 @@ Riemannian Manifold and on groups.
 Original Developer: Nina Miolane (original codes in Scilab)
 Scilab to Matlab conversion: Nina Miolane, Bishesh Khanal
 
-Things to add ...
+Dependencies:
+Almost all of the codes should work with a basic version of matlab.
+However, to use real brain data one needs the following softwares/toolboxes
+installed.
+1. spm to extract surface from the brain volume.
+2. toolbox_graph to plot the brain surface mesh obtained from spm.
+With this tool many different meshes are plotted in the same coordinate frame.
