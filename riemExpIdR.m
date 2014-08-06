@@ -6,5 +6,5 @@
 % end:  TODO
 
 function [f]=riemExpIdR(a,v)
-    f=INV(riemExpIdR(a,-v));
+    f=grpInv(riemExpIdL(a,-v));
 end

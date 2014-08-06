@@ -6,6 +6,6 @@
 % end:  TODO
 
 function [f]=riemExpR(a,f0,v)
-    f=riemExpIdR(a,inv(J_R(f0))*v)*. f0;
+    f=grpCompose((riemExpIdR(a, jR(f0)\v)), f0);
     %right-invariance of the right Riemannian geodesics
 end

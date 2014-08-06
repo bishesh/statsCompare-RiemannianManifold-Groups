@@ -6,5 +6,5 @@
 % end:  TODO
 
 function [v]=riemLogR(a,f0,f)
-    v=jR(f0)*riemLogIdR(a,f*. INV(f0));
+    v=jR(f0)*riemLogIdR(a,grpCompose(f, grpInv(f0)));
 end

@@ -1,10 +1,14 @@
-% start: TODO
-% What the function does
-% end:  TODO
+% Take a rotation matrix and convert it into a vector form.
+% Input: 
+% R: Rotation matrix of size 3x3
+% Output: 
+% r: vector with three elements. Norm of r is the rotation angle about an
+% axis which is the vector r itself.
+
 function [r]=rotVect(R)
     M=R*R'-eye(3,3);
     if trace(M)>1e-20 % TODO: do we have numeric precision less than 1e-12?
-        R=Rot(R); 
+        R=getClosestRotMat(R); 
     end
     c=(trace(R)-1)/2;
     if c>1

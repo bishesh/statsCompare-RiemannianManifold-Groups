@@ -8,6 +8,6 @@
 % Riemannian exponential and logarithm from any point f0 (for left- and right-invariant metric)
 
 function [f]=riemExpL(a,f0,v)
-    f=f0 *. riemExpIdL(a,inv(J_L(f0))*v);   %TODO: *. ?
+    f=grpCompose(f0, riemExpIdL(a, jL(f0)\v));  
 %     left-invariance of the left Riemannian geodesics
 end

@@ -1,12 +1,13 @@
 % start: TODO
-% What the function does
-% clearer function name ? 
+% Group exponential from Id
+% Inputs:
+% Outputs:
 % end:  TODO
 
-% Group exponential and logarithm from Id
 
-function [f]=expId(v)
-    v=reg(v);
+
+function [f]=grpExpId(v)
+    v=grpReg(v);
     r=v(1:3);
     dt=v(4:6);
     theta=norm(r);

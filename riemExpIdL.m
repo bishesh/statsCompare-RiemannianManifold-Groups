@@ -7,7 +7,7 @@
 
 % Riemannian exponential and logarithm from Id (for left- and right-invariant metric)
 function [f]=riemExpIdL(a,v)
-    v=reg(v);
+    v=grpReg(v);
     f(1:3)=v(1:3);
     f(4:6)=a*v(4:6);
 end
