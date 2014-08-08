@@ -10,7 +10,7 @@ function [u]=regRot(r)
 phi=norm(r);
 u=r;
 if phi ~= 0  
-    k0=double(int32(phi/(2*pi)+1/2));
+    k0=double(floor( (phi/(2*pi)) + (1/2)) );
     u=(phi-2*pi*k0)*r/phi;
 end
 end

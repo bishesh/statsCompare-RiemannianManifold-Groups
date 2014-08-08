@@ -14,7 +14,9 @@ function f = grpCompose(f1,f2)
 f1 = makeColVector(f1,6);
 f2 = makeColVector(f2,6);
 R1 = getClosestRotMat(rotMat(f1(1:3))); t1 = f1(4:6);
+% R1 = rotMat(f1(1:3)); t1 = f1(4:6);
 R2 = getClosestRotMat(rotMat(f2(1:3))); t2 = f2(4:6);
+% R2 = rotMat(f2(1:3)); t2 = f2(4:6);
 f = zeros(6,1);
 f(1:3) = rotVect(R1*R2);
 f(4:6) = (R1*t2) + t1;

@@ -8,5 +8,5 @@
 function [ff]=grpExp(f,v)
     v=grpReg(v);
     f=grpReg(f);
-    ff=grpCompose(f, grpExpId(jL(f)\v)); 
+    ff=grpReg(grpCompose(f, grpExpId(jL(f)\v))); 
 end
