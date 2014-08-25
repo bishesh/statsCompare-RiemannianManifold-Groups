@@ -1,13 +1,22 @@
-This is a set of matlab codes to compare statistical tools on
-Riemannian Manifold and on groups.
+Authors:
+Nina Miolane, Bishesh Khanal.
+Asclepios Team,
+INRIA Sophia Antipolis.
 
-Original Developer: Nina Miolane (original codes in Scilab)
-Scilab to Matlab conversion: Nina Miolane, Bishesh Khanal
+This is a set of matlab codes to compare the computing of the different types of means
+on Lie groups. These codes can be used to reproduce the experiments illustrated in the
+video developed for the MICCAI Educational challenge 2014, available at:
+url of the video.
+
 
 Dependencies:
-Almost all of the codes should work with a basic version of matlab.
-However, to use real brain data one needs the following softwares/toolboxes
-installed.
-1. spm to extract surface from the brain volume.
-2. toolbox_graph to plot the brain surface mesh obtained from spm.
-With this tool many different meshes are plotted in the same coordinate frame.
+If you use the brain.mat file available then matlab along with the following toolboxes
+should be availble:
+1. toolbox_graph to plot the brain surface mesh. Available at:
+http://www.mathworks.co.uk/matlabcentral/fileexchange/5355-toolbox-graph
+
+If you want to create the brain surface and convert it to the matlab readable mesh from
+a skull stripped brain MRI volume then you need following additional softwares.
+1. SPM (these codes use spm8) available at:
+http://www.fil.ion.ucl.ac.uk/spm/
+

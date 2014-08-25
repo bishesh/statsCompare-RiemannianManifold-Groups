@@ -1,6 +1,5 @@
 % start: TODO
 % What the function does
-% clearer function name ? 
 % Inputs description:
 % Outputs description:
 % end:  TODO
