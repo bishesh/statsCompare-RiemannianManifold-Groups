@@ -6,12 +6,12 @@
 % end:  TODO
 
 function [s]=sigma2R(a,m,tabf,tabw)
-    siz=size(tabf(1,,"*");  %TODO:
+    siz=size(tabf,2);
     s=0;
-    if siz <> size(tabw,"*")
-        disp("longueurs de tableaux incompatibles"); 
+    if siz < 2 
+        disp('Calculating variance requires at least 2 points');
     end
-    for (i=1:siz)
-        s=s+tabw(i)*norma2_R(a,m,Riem_R_Log(a,m,tabf(:,i)));
+    for i=1:siz
+        s=s+tabw(i)*normA2R(a,m,riemLogR(a,m,tabf(:,i)));
     end
 end
