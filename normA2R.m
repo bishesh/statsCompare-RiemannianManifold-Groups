@@ -4,6 +4,6 @@
 % end:  TODO
 
 function [n]=normA2R(a,f,v)
-    v=regSE3(v);
+    v=grpReg(v);
     n=v'*qR(a,f)*v;
 end

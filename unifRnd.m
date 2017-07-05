@@ -8,9 +8,6 @@
 % Statistical setting on SE(3) 
 
 function [f]= unifRnd()
-    M=(rand(3,3)-0.5*ones(3,3))*2;
-    t=(rand(3,1)-0.5)*2;
-    r=regRot(rotVect(rotMat(M)));
-    f(1:3)=r;
-    f(4:6)=t;
+    f(1:3) = regRot(rand(3,1) * 2 - 1);     % rotation
+    f(4:6) = rand(3,1) * 2 - 1;             % translation
 end

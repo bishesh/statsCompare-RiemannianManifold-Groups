@@ -4,6 +4,8 @@
 % end:  TODO
 
 function [g]=qR(a,f)
+    f=makeColVector(f,6);
+    f=grpReg(f);
     g0=zeros(6,6);
     g0(1:3,1:3)=eye(3,3);
     g0(4:6,4:6)=a*eye(3,3);
