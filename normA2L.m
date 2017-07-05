@@ -11,6 +11,6 @@
 %  Outputs:
 % n :
 function [n]=normA2L(a,f,v)
-    v=regSE3(v);
+    v=grpReg(v);
     n=v'*qL(a,f)*v;
 end
