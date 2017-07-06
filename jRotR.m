@@ -3,6 +3,8 @@
 % clearer function name ?
 % end:  TODO
 
+% Differentials of the left and right translations for SO(3) in the principal chart
+
 function [Jl]=jRotR(r)
     r=regRot(r);
     theta=norm(r);
@@ -15,5 +17,5 @@ function [Jl]=jRotR(r)
     else phi=(theta/2)/(tan(theta/2));
         w=(1-phi)/theta^2;
     end
-Jl=phi*eye(3,3)+w*(r*r')-skew(r)/2;
+Jl=phi*eye(3,3) + (w*(r*r')) - skew(r)/2;
 end
