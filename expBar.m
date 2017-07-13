@@ -5,25 +5,30 @@
 % Outputs description:
 % end:  TODO
 
-function [m]=expBar(tabf,tabw)
-    siz=size(tabf(1,,"*");   %TODO
-    if siz <> size(tabw,"*") % TODO
-        disp('longueurs de tableaux incompatibles'); 
+function [m]=expBar(tabf,tabw) 
+    
+    % tabf: SE3 data points, 6xN array
+    % tabw: data point weights, 1xN array
+
+    siz=size(tabf,2);  %TODO:
+    if siz < 2 
+        disp('Calculating mean requires at least 2 points'); 
     end
-    for i=1:siz
-        f=tabf(:,i);
-        tabr(1:3,i)=f(1:3);  
-        tabt(1:3,i)=f(4:6);
-    end
-    rmean=RotMean(tabr,tabw);
+    
+    tabr=tabf(1:3,:);
+    tabt=tabf(4:6,:);
+    rmean=rotMean(tabr,tabw);
+    
     % Partie translation, p34 de expbar
-    M=zeros(3,3);
-    t=zeros(3,1);
+    M = zeros(3,3);
+    t = zeros(3,1);
+    
     for i=1:siz
         Maux=inv(matDeExp(rotVect(rotMat(rmean)*rotMat(-tabr(:,i)))));
         M=M+tabw(i)*Maux;
         t=t+tabw(i)*Maux*rotMat(-tabr(:,i))*tabt(:,i);
     end
-    m(1:3,1)=rmean;
-    m(4:6,1)=inv(M)*t;
+    
+    m(1:3)=rmean;
+    m(4:6)=M\t; %inv(M)*t;
 end

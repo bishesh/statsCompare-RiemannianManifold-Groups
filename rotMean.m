@@ -8,19 +8,22 @@
 % Preliminaries: computation of the mean for rotations
 
 function [m]=rotMean(tabr,tabw)
-    siz=size(tabr(1,,"*");  %TODO:
-    if siz <> size(tabw,"*") 
-        disp('longueurs de tableaux incompatibles'); 
+    siz=size(tabr,2);  %TODO:
+    if siz < 2 
+        disp('Calculating mean requires at least 2 points'); 
     end
+    
     m=tabr(:,1);
     %mbis=mt et m=m(t+1)
+    
     aux=zeros(6,1);
     first=0;
     % BRACKETS!! in while
-    while first==0 | (norm(logRotL(mbis,m))^2>1e-5*sigma2(mbis,tabr,tabw))
+    
+    while first==0 || (norm(logRotL(mbis,m))^2>1e-5*sigma2(mbis,tabr,tabw))
         mbis=m;
         aux=zeros(3,1);
-        for (i=1:siz)
+        for i=1:siz
             aux=aux+tabw(i)*logRotL(mbis,tabr(:,i));
         end
         m=expRotL(mbis,aux);
